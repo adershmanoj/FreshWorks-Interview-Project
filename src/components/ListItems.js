@@ -1,20 +1,23 @@
 import React from 'react';
 import ListItem from './ListItem';
 class ListItems extends React.Component {
+  state = {
+    activeIndex : null
+  }
   render() {
     return (
       <div className='listItems'>
-        {renderListItems()}
+        {this.renderListItems()}
       </div>
     );
   }
+  renderListItems() {
+    return dataItems.map((post) => {
+      const active = this.state.activeIndex === post.id ? true : false;
+      return <ListItem key={post.id} data={post} active={active} setActive={() => this.setState({activeIndex: post.id})}/>
+    });
+  }
 }
-function renderListItems() {
-  return dataItems.map((post) => {
-    return <ListItem key={post.id} data={post} />
-  });
-}
-
 let dataItems = [
   {
     id: 1,

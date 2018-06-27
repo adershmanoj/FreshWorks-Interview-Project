@@ -13,7 +13,7 @@ body {
   border-right: 5px solid transparent;
   margin: 0 2px;
   cursor: pointer;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #828282;
 }
 
 .header {
@@ -57,7 +57,9 @@ body {
   color: black;
   text-decoration: none;
 }
-
+.listItem__header p:first-child {
+  color: #828282;
+}
 .listItem__footer {
   display: flex;
   margin-left: 2.5em;
