@@ -11,9 +11,10 @@ class ListItems extends React.Component {
 }
 function renderListItems() {
   return dataItems.map((post) => {
-    return <ListItem key={post.id} data={post}/>
+    return <ListItem key={post.id} data={post} />
   });
 }
+
 let dataItems = [
   {
     id: 1,
