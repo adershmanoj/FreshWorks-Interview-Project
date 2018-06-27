@@ -13,7 +13,12 @@ class ListItem extends React.Component {
     const comments = this.state.comments;
     const hidden = this.props.hidden;
     if(hidden)
-      return <p>hidden</p>
+      return (
+        <div className='listItem listItem--hidden'>
+          <p>post hidden</p>
+          <a onClick={this.props.unHide}>(Unhide)</a>
+        </div>
+      )
     else
       return (
         <div className='listItem'>

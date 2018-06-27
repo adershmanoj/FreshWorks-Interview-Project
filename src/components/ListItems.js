@@ -16,7 +16,9 @@ class ListItems extends React.Component {
     return dataItems.map((post) => {
       const active = this.state.activeIndex === post.id ? true : false;
       const hidden = this.state.hiddenIndex.includes(post.id) ? true : false;
-      return <ListItem key={post.id} data={post} active={active} setActive={() => this.setState({activeIndex: post.id})}  hidden={hidden} setHidden={() => this.setState({hiddenIndex: this.state.hiddenIndex.concat([post.id])})}/>
+      const hiddenIndex = this.state.hiddenIndex;
+      
+      return <ListItem key={post.id} data={post} active={active} setActive={() => this.setState({activeIndex: post.id})}  hidden={hidden} setHidden={() => this.setState({hiddenIndex: hiddenIndex.concat([post.id])})} unHide={()=>this.setState({hiddenIndex: hiddenIndex.filter((index) => {return index !== post.id})})} />
     });
   }
 }

@@ -46,6 +46,14 @@ body {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 10pt;
 }
+.listItem--hidden {
+  margin-left: 2em;
+}
+.listItem--hidden a {
+  color: #828282;
+  font-size: 8pt;
+  cursor: pointer;
+}
 .listItem__header {
   display: flex;
   align-items: center;  
