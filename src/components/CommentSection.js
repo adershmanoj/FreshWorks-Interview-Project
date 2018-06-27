@@ -9,11 +9,11 @@ export default class CommentSection extends React.Component {
     const comments = this.state.comments;
     const textInput = this.state.textInput;
     return (
-      <div>
+      <div className='commentSection'>
         <textarea rows="4" cols="50" placeholder="add comment" onChange={(e)=>this.setState({textInput: e.target.value})} value={textInput}>
         </textarea>
         <button type="submit" onClick={this.addComment}>add comment</button>
-        <div>{comments.map((comment)=>{return <p key={comment}>{comment}</p>})}</div>
+        <div>{comments.map((comment)=>{return <li key={comment}>{comment}</li>})}</div>
       </div>
     )
   }

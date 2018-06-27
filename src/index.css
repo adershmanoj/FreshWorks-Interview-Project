@@ -69,3 +69,22 @@ body {
 .listItem__footer p {
   margin-right: 5px;
 }
+.listItem__footer a {
+  cursor: pointer;
+}
+
+.commentSection {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.commentSection button {
+  width: 15%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.commentSection div > li {
+  color: #828282;
+  margin-top: 5px;
+}
