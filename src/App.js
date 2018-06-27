@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header title="Hacker News"/>
+        <Header title="Hacker News"/> //static header
         <ListItems/>
       </div>
     );

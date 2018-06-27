@@ -3,8 +3,8 @@ import CommentSection from './CommentSection';
 
 class ListItem extends React.Component {
   state = {
-    points: this.props.data.points,
-    comments: this.props.data.comments,
+    points: this.props.data.points, //post points
+    comments: this.props.data.comments, //array of post comments
   }
 
   render() {
@@ -12,7 +12,8 @@ class ListItem extends React.Component {
     const active = this.props.active;
     const comments = this.state.comments;
     const hidden = this.props.hidden;
-    if(hidden)
+    
+    if(hidden) //hidden post
       return (
         <div className='listItem listItem--hidden'>
           <p>post hidden</p>

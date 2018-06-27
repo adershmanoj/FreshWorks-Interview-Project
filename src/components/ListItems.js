@@ -1,9 +1,10 @@
 import React from 'react';
 import ListItem from './ListItem';
+
 class ListItems extends React.Component {
   state = {
-    activeIndex : null,
-    hiddenIndex: []
+    activeIndex : null, //index of listItem with comment section active
+    hiddenIndex: [] //indices of hidden listItems
   }
   render() {
     return (
@@ -14,15 +15,15 @@ class ListItems extends React.Component {
   }
   renderListItems() {
     return dataItems.map((post) => {
-      const active = this.state.activeIndex === post.id ? true : false;
-      const hidden = this.state.hiddenIndex.includes(post.id) ? true : false;
+      const active = this.state.activeIndex === post.id ? true : false; //active listItem
+      const hidden = this.state.hiddenIndex.includes(post.id) ? true : false; //hidden listItem
       const hiddenIndex = this.state.hiddenIndex;
       
       return <ListItem key={post.id} data={post} active={active} setActive={() => this.setState({activeIndex: post.id})}  hidden={hidden} setHidden={() => this.setState({hiddenIndex: hiddenIndex.concat([post.id])})} unHide={()=>this.setState({hiddenIndex: hiddenIndex.filter((index) => {return index !== post.id})})} />
     });
   }
 }
-let dataItems = [
+let dataItems = [ //Static data for testing
   {
     id: 1,
     title: 'Firefox 61.0 Released ',
